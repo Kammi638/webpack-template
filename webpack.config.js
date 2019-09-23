@@ -89,12 +89,10 @@ module.exports = {
     new GoogleFontsPlugin({
       fonts: [
         {
-          family: 'Lato',
+          family: 'Roboto',
           variants: [
-            '300',
             '400',
             '700',
-            '900'
           ],
           subsets: ['latin-ext'],
         }

@@ -1,0 +1,292 @@
+/* ------------------------------------------------------------------------- */
+/* Colors >>> */
+/* ------------------------------------------------------------------------- */
+$theme-color-interval:  6%;
+
+$gray:          #989aa4;
+$gray-light:    #d8dde6;
+$gray-lighter:  #f3f3f3;
+
+$primary:       #04005E;
+$secondary:     #4f44ff;
+$success:       #399F66;
+$info:          #4A90E2;
+$warning:       #ffdd57;
+$danger:        #ff3860;
+$light:         $gray-light;
+
+$theme-colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+    (
+      "primary":    $primary,
+      "secondary":  $secondary,
+      "success":    $success,
+      "info":       $info,
+      "warning":    $warning,
+      "danger":     $danger,
+      "light":      $light,
+      "dark":       $dark
+    ),
+    $theme-colors
+);
+/* <<< Colors */
+
+/* ------------------------------------------------------------------------- */
+/* YIQ >>> */
+/* ------------------------------------------------------------------------- */
+// The yiq lightness value that determines when the lightness of color
+// changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold:  160;
+
+// Customize the light and dark text colors for use in our YIQ color contrast
+// function.
+$yiq-text-dark:             #212529;
+$yiq-text-light:            #fff;
+/* <<< YIQ */
+
+/* ------------------------------------------------------------------------- */
+/* Scaffolding / Components >>> */
+/* ------------------------------------------------------------------------- */
+$body-color:             rgba(#000, 0.85);
+
+// Spacing
+$spacer:                 1rem;
+$spacer-large:           1.5rem;
+$spacer-small:           0.75rem;
+
+// Main
+$main-margin-top:        $spacer;
+$main-margin-bottom:     $spacer-large;
+
+// Grid
+$grid-gutter-width:      20px;
+/* <<< Scaffolding / Components */
+
+
+/* ------------------------------------------------------------------------- */
+/* Typography >>> */
+/* ------------------------------------------------------------------------- */
+// Base
+$font-family-custom:     'Roboto';
+
+$font-size-base:         0.875rem; // Assumes the browser default, typically `16px`
+$font-size-xl:           ($font-size-base * 1.4);
+$font-size-lg:           ($font-size-base * 1.1);
+$font-size-sm:           ($font-size-base * 0.95);
+$font-size-xs:           ($font-size-base * 0.85);
+
+$font-weight-light:      300;
+$font-weight-normal:     400;
+$font-weight-semibold:   500;
+$font-weight-medium:     $font-weight-semibold;
+$font-weight-bold:       700;
+$font-weight-base:       $font-weight-normal;
+
+$line-height-base:       1.5;
+$line-height-sm:         1.3;
+
+$border-radius:          .15rem;
+$border-radius-lg:       $border-radius;
+$border-radius-sm:       $border-radius;
+
+// Link
+$link-color:             $primary;
+$link-decoration:        underline;
+$link-hover-color:       darken($link-color, $theme-color-interval);
+$link-hover-decoration:  none;
+
+// Title
+$title-font-family:      $font-family-custom;
+/* <<< Typography */
+
+
+/* ------------------------------------------------------------------------- */
+/* Buttons & Form controls >>> */
+/* ------------------------------------------------------------------------- */
+$input-btn-focus-width:     2px;
+$input-btn-focus-color:     $gray-light;
+
+$input-btn-padding-x:       0.95rem;
+$input-btn-padding-y:       0.84rem;
+
+$input-btn-padding-x-lg:    0.95rem;
+$input-btn-padding-y-lg:    0.93rem;
+
+$input-btn-padding-x-sm:    0.95rem;
+$input-btn-padding-y-sm:    0.78rem;
+
+$input-btn-padding-x-xs:    0.95rem;
+$input-btn-padding-y-xs:    0.65rem;
+/* <<< Buttons & Form controls */
+
+/* ------------------------------------------------------------------------- */
+/* Inputs >>> */
+/* ------------------------------------------------------------------------- */
+$input-border-color:        $gray-light;
+$input-focus-border-color:  darken($input-border-color, $theme-color-interval);
+/* <<< Inputs */
+
+/* ------------------------------------------------------------------------- */
+/* Buttons >>> */
+/* ------------------------------------------------------------------------- */
+$btn-font-size:            0.75rem !default;
+$btn-font-size-sm:         0.75rem !default;
+$btn-font-size-lg:         0.825rem !default;
+$btn-font-weight:          $font-weight-semibold !default;
+$btn-text-transform:       uppercase !default;
+/* <<< Buttons */
+
+/* ------------------------------------------------------------------------- */
+/* Header >>> */
+/* ------------------------------------------------------------------------- */
+// Note: These variables are ingored when header inline variant in active
+// Header inline background and height is handled by $navbar-height and $navbar-bg variables.
+$header-bg:               $gray-lighter !default;
+$header-height:           100px !default;
+/* <<< Header */
+
+/* ------------------------------------------------------------------------- */
+/* Toppanel >>> */
+/* ------------------------------------------------------------------------- */
+$toppanel-height:         40px !default;
+$toppanel-font-size:      $font-size-sm !default;
+$toppanel-bg:             #fff !default;
+/* <<< Toppanel */
+
+/* ------------------------------------------------------------------------- */
+/* Navbar >>> */
+/* ------------------------------------------------------------------------- */
+$navbar-height:                           65px !default;
+$navbar-bg:                               $secondary !default;
+
+$navbar-link-padding-x:                   2em;
+$navbar-link-bg:                          transparent !default;
+$navbar-link-hover-bg:                    lighten($navbar-bg, $theme-color-interval) !default;
+$navbar-link-active-bg:                   $navbar-link-hover-bg !default;
+$navbar-link-color:                       color-yiq($navbar-bg) !default;
+$navbar-link-hover-color:                 color-yiq($navbar-link-hover-bg) !default;
+$navbar-link-active-color:                $navbar-link-hover-color !default;
+$navbar-link-font-size:                   $font-size-base !default;
+$navbar-link-font-weight:                 400 !default;
+
+$navbar-nested-bg:                        #fff !default;
+$navbar-nested-link-color:                color-yiq($navbar-nested-bg) !default;
+$navbar-nested-link-font-weight:          $font-weight-base !default;
+$navbar-nested-link-font-size:            $font-size-base !default;
+$navbar-nested-link-hover-color:          $link-color !default;
+$navbar-nested-link-active-color:         $navbar-nested-link-hover-color !default;
+/* <<< Navbar */
+
+/* ------------------------------------------------------------------------- */
+/* Sidebar >>> */
+/* ------------------------------------------------------------------------- */
+$sidenav-bg:                                    $secondary !default;
+
+$sidenav-link-height:                           60px !default;
+$sidenav-link-border:                           darken($sidenav-bg, 3%) !default;
+$sidenav-link-color:                            color-yiq($sidenav-bg) !default;
+$sidenav-link-hover-bg:                         lighten($sidenav-bg, $theme-color-interval) !default;
+$sidenav-link-hover-color:                      color-yiq($sidenav-link-hover-bg) !default;
+$sidenav-link-font-size:                        $font-size-base !default;
+$sidenav-link-font-weight:                      $font-weight-base !default;
+$sidenav-link-active-bg:                        $sidenav-link-hover-bg !default;
+$sidenav-link-active-color:                     color-yiq($sidenav-link-active-bg) !default;
+
+$sidenav-nested-bg:                             darken($sidenav-bg, 3%) !default;
+$sidenav-nested-link-height:                    30px !default;
+$sidenav-nested-link-color:                     rgba(color-yiq($sidenav-nested-bg), 0.6) !default;
+$sidenav-nested-link-hover-color:               $sidenav-link-color !default;
+$sidenav-nested-link-active-color:              color-yiq($sidenav-nested-bg) !default;
+$sidenav-nested-link-font-size:                 $font-size-sm !default;
+$sidenav-nested-link-font-weight:               $font-weight-base !default;
+
+$sidenav-toggle-bg:                             lighten($sidenav-bg, $theme-color-interval) !default;
+$sidenav-toggle-color:                          color-yiq($sidenav-toggle-bg) !default;
+$sidenav-toggle-font-weight:                    $font-weight-bold !default;
+$sidenav-toggle-hover-bg:                       $sidenav-bg !default;
+$sidenav-toggle-hover-color:                    color-yiq($sidenav-toggle-hover-bg) !default;
+/* <<< Sidebar */
+
+/* ------------------------------------------------------------------------- */
+/* Floatnav >>> */
+/* ------------------------------------------------------------------------- */
+$floatnav-bg:                         $sidenav-link-hover-bg !default;
+$floatnav-padding:                    2rem !default;
+$floatnav-items-per-row:              2 !default;
+
+$floatnav-link-color:                 color-yiq($floatnav-bg) !default;
+$floatnav-link-hover-color:           $floatnav-link-color !default;
+$floatnav-link-active-color:          $floatnav-link-color !default;
+$floatnav-link-font-size:             $font-size-base !default;
+$floatnav-link-font-weight:           $font-weight-bold !default;
+
+$floatnav-nested-link-color:          rgba(color-yiq($floatnav-bg), 0.7) !default;
+$floatnav-nested-link-hover-color:    $floatnav-link-color !default;
+$floatnav-nested-link-active-color:   $floatnav-link-color !default;
+$floatnav-nested-link-font-size:      $font-size-sm !default;
+$floatnav-nested-link-font-weight:    $font-weight-base !default;
+/* <<< Floatnav */
+
+/* ------------------------------------------------------------------------- */
+/* Carousel >>> */
+/* ------------------------------------------------------------------------- */
+$carousel-primary-color:                  $secondary !default;
+
+$carousel-content-color:                  #fff !default;
+$carousel-content-max-width:              650px !default;
+
+$carousel-button-bg:                      #fff !default;
+$carousel-button-color:                   color-yiq($carousel-button-bg) !default;
+
+$carousel-navigation-height:              55px !default;
+$carousel-navigation-bg:                  $carousel-primary-color !default;
+$carousel-navigation-item-font-size:      $font-size-sm !default;
+$carousel-navigation-item-color:          rgba(color-yiq($carousel-navigation-bg), 0.4) !default;
+$carousel-navigation-item-active-bg:      lighten($carousel-navigation-bg, $theme-color-interval) !default;
+$carousel-navigation-item-active-color:   color-yiq($carousel-navigation-item-active-bg) !default;
+/* <<< Carousel */
+
+/* ------------------------------------------------------------------------- */
+/* Footer >>> */
+/* ------------------------------------------------------------------------- */
+$footer-bg-image:                 'https://picsum.photos/550/370/?image=1036' !default;
+$footer-bg-color:                 $secondary !default;
+$footer-bottom-bg:                #fff !default;
+/* <<< Footer */
+
+/* ------------------------------------------------------------------------- */
+/* Modal >>> */
+/* ------------------------------------------------------------------------- */
+$modal-lg:                        960px;
+/* <<< Modal */
+
+/* ------------------------------------------------------------------------- */
+/* Dropdown >>> */
+/* ------------------------------------------------------------------------- */
+$dropdown-bg:                       #fff;
+$dropdown-border-color:             transparent;
+$dropdown-box-shadow:               0 8px 19px 0 rgba(#000, 0.11);
+$dropdown-padding-y:                1rem;
+$dropdown-item-padding-x:           0.5rem;
+$dropdown-item-padding-y:           0.5rem;
+/* <<< Dropdown */
+
+/* ------------------------------------------------------------------------- */
+/* Progress >>> */
+/* ------------------------------------------------------------------------- */
+$progress-height:                  0.625rem;
+$progress-border-radius:           0.5rem;
+/* <<< Progress */
+
+/* ------------------------------------------------------------------------- */
+/* Tooltip >>> */
+/* ------------------------------------------------------------------------- */
+$tooltip-font-size:                $font-size-sm;
+$tooltip-max-width:                300px;
+$tooltip-opacity:                  0.95;
+$tooltip-bg:                       $secondary;
+$tooltip-color:                    color-yiq($tooltip-bg);
+$tooltip-padding-y:                $spacer / 2;
+$tooltip-padding-x:                $spacer / 2;
+/* <<< Tooltip */
